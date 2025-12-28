@@ -1,0 +1,119 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* ===== ФОН ===== */
+body {
+  min-height: 100vh;
+  background: linear-gradient(270deg, #0f2027, #203a43, #2c5364);
+  background-size: 600% 600%;
+  animation: gradient 15s ease infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ===== GLASS КОНТЕЙНЕР ===== */
+.container {
+  width: 90%;
+  max-width: 900px;
+  padding: 40px;
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.4);
+  animation: appear 1.2s ease forwards;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ===== ТЕКСТ ===== */
+h1 {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 15px;
+  background: linear-gradient(90deg, #00f5ff, #7cffcb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  text-align: center;
+  opacity: 0.85;
+  margin-bottom: 40px;
+  font-size: 1.2rem;
+}
+
+/* ===== КАРТОЧКИ ===== */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+.card {
+  background: rgba(255,255,255,0.12);
+  border-radius: 20px;
+  padding: 25px;
+  text-align: center;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.card:hover {
+  transform: translateY(-15px) rotateX(8deg);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.6);
+}
+
+.card h2 {
+  margin-bottom: 10px;
+  color: #7cffcb;
+}
+
+.card p {
+  font-size: 0.95rem;
+  opacity: 0.85;
+}
+
+/* ===== КНОПКА ===== */
+.button {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.button a {
+  text-decoration: none;
+  padding: 15px 40px;
+  border-radius: 50px;
+  color: #0f2027;
+  background: linear-gradient(90deg, #00f5ff, #7cffcb);
+  font-weight: bold;
+  letter-spacing: 1px;
+  box-shadow: 0 0 25px rgba(124,255,203,0.7);
+  transition: all 0.3s ease;
+}
+
+.button a:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 40px rgba(124,255,203,1);
+}
